@@ -12,6 +12,7 @@
     <nav>
       <a href="#intro">Intro</a>
       <a href="#config">Configuración</a>
+      <a href="#commandos"></a>
     </nav>
     <main>
       <section id="intro">
@@ -31,7 +32,7 @@
         </article>
       </section>
       <section id="config">
-          <h2>Configuración Inicial</h2>
+        <h2>Configuración Inicial</h2>
         <pre>
         <code>
           $ git --version 
@@ -41,20 +42,80 @@
           $ git config --global -e  // consultar archivo de configuración          
         </code>
         </pre>
-        <p>Configurar el core.autocrlf pues varia segun el Sistema Operativo desde donde estemos trabajando.</p>
+        <p>
+          Configurar el <b>core.autocrlf</b> pues varia segun el Sistema Operativo
+          desde donde estemos trabajando.
+        </p>
         <ul>
-            <li>Window -> core.autocrlf true</li>
-            <li>Linux/Mac -> core.autocrlf input</li>
-        </ul> 
+          <li>Window -> core.autocrlf true</li>
+          <li>Linux/Mac -> core.autocrlf input</li>
+        </ul>
         <pre>
             <code>
                 $ git config --global core.autocrlf true
             </code>
-        </pre> 
-        <p>Nota: Mas sobre configuracion con el comando</p>
-        <code>
-            $ git config -h
-        </code>  
+        </pre>
+        <p>Nota: Más sobre configuración con el comando</p>
+        <code> $ git config -h </code>
+      </section>
+      <h2>Comandos básicos</h2>
+      <section id="commandos">
+        <ol>
+          <li>status or status -s(simplificado)</li>
+          <li>add</li>
+          <li>commit</li>
+          <li>rm</li>
+          <li>mv</li>
+        </ol>
+        <article>
+          <h3>...</h3>
+          <code>git add archivo1.txt</code>
+          <p>
+            El parametro puede ser nombre de archivo, extensión o expresión
+            regular.<br />
+            <b
+              >Nota: usar el "." para comprometer todos los cambios es una mala
+              práctica.</b
+            >
+            Para comprometer varios cambios a la vez, añada los nombre de
+            archivos separados por un espacio.
+          </p>
+          <p>
+            Nota: cuando se hace un cambio sobre una archivo que está en Staging
+            Area, al generarse un nuevo cambio se debe volver a actualizar el
+            mismo.
+          </p>
+        </article>
+        <article>
+          <h3>...</h3>
+          <p>Comprometer cambios</p>
+          <code>$ git commit -m"Versión Inicial"</code>
+          <p></p>
+        </article>
+        <article>
+          <h3>...</h3>
+          <p>Comandos basicos SO</p>
+          <ul>
+            <li>ls -> listar archivos</li>
+            <li>rm-> eliminar archivo</li>
+            <li>mv-> renombrar archivo</li>
+          </ul>
+          <p>git permite eliminar archivos directamente con el siguiente comando:</p>
+          <code>
+            $git rm filename
+          </code>
+        </article>
+        <article>
+          <h3>....</h3>
+          <p>¿Cómo sacar cambios de la etapa de staging area?</p>
+          <code>
+            $ git restore --staged filename
+          </code>
+        </article>
+        <article>
+          <h3>...</h3>
+          <p>Ignorar archivos creando archivo <b>.gitignore</b> y dentro, especificamos los archivo, directorios o rutas que queremosignorar.</p>
+        </article>
       </section>
     </main>
   </body>
